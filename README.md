@@ -129,7 +129,7 @@ SICK MRS1104 sensor use ROS [sick_scan](http://wiki.ros.org/sick_scan) package t
 #### Instalation
 ROS noetic:
 ```bash
-source /opt/ros/<rosdistro>/setup.bash
+source /opt/ros/noetic/setup.bash
 mkdir -p ~/ros_catkin_ws/src/
 cd ~/ros_catkin_ws/src/
 git clone -b devel --single-branch git://github.com/SICKAG/sick_scan.git
