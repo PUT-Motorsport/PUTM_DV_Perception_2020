@@ -117,3 +117,43 @@ altitude: nan
 position_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 position_covariance_type: 0
 ```
+
+
+## LIDAR sensor
+### Sensor information
+[SICK MRS1104](https://www.sick.com/de/en/detection-and-ranging-solutions/3d-lidar-sensors/mrs1000/mrs1104c-111011/p/p495044?ff_data=JmZmX2lkPXA0OTUwNDQmZmZfbWFzdGVySWQ9cDQ5NTA0NCZmZl90aXRsZT1NUlMxMTA0Qy0xMTEwMTEmZmZfcXVlcnk9JmZmX3Bvcz0xJmZmX29yaWdQb3M9MSZmZl9wYWdlPTEmZmZfcGFnZVNpemU9OCZmZl9vcmlnUGFnZVNpemU9OCZmZl9zaW1pPTkyLjA=) with communication via TCP/IP.
+
+### ROS package
+SICK MRS1104 sensor use ROS [sick_scan](http://wiki.ros.org/sick_scan) package to provide the measurement data as PointCloud2 and LaserScan data.
+
+#### Instalation
+ROS noetic:
+```bash
+source /opt/ros/<rosdistro>/setup.bash
+mkdir -p ~/ros_catkin_ws/src/
+cd ~/ros_catkin_ws/src/
+git clone -b devel --single-branch git://github.com/SICKAG/sick_scan.git
+cd ..
+catkin_make
+source ~/ros_catkin_ws/install/setup.bash
+```
+
+
+#### Usage
+1. Use the [SICK SOPAS ET Software](https://www.sick.com/de/de/sopas-engineering-tool-2020/p/p367244) (working only on Windows 7,8,10) to determine or set the IP address of the laser scanner.
+2. Change IP address is in the launch-file associated with your scanner type.
+3. Launch the node e.g.
+```bash
+roslaunch sick_scan sick_mrs_1xxx.launch
+```
+4. Launch rviz
+```bash
+rviz rviz
+```
+5. Select laser as fixed frame and add a new PointCloud decoder subscribed at topic cloud.
+
+
+### Sensor data TODO
+#### Topics
+
+#### Messages
