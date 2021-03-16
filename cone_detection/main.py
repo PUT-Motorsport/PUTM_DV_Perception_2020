@@ -18,29 +18,31 @@ def euclidean_distance(x, y, z):
 
 
 def callback(ros_point_cloud):
+    global counter
     gen = pc2.read_points(ros_point_cloud)
     int_data = list(gen)
     new_data = []
     result = []
-    cluster = Birch(n_clusters=3)
+    cluster = Birch(n_clusters=None)
 
     for x in int_data:
         if x[2] < -0.15 or x[0] < -0.15 or x[0] > 4.5 or x[1] > 4 or x[1] < -4:
             continue
         else:
             new_data.append(x)
-        cluster.fit(new_data)
 
-        centers = cluster.subcluster_centers_
-        for center in centers:
-            dist = euclidean_distance(center[0], center[1], center[2])
-            border_width = cone_width / dist
-            border_height = cone_height / (2 * dist)
-            for point in int_data:
-                if center[0] - border_width < point[0] < center[0] + border_width and \
-                        center[1] - border_width < point[1] < center[1] + border_width and \
-                        center[2] - border_height < point[2] < center[2] + border_height:
-                    result.append(point)
+    cluster.fit(new_data)
+
+    centers = cluster.subcluster_centers_
+    for center in centers:
+        dist = euclidean_distance(center[0], center[1], center[2])
+        border_width = cone_width / dist
+        border_height = cone_height / (2 * dist)
+        for point in int_data:
+            if center[0] - border_width < point[0] < center[0] + border_width and \
+                    center[1] - border_width < point[1] < center[1] + border_width and \
+                    center[2] - border_height < point[2] < center[2] + border_height:
+                result.append(point)
 
     header = ros_point_cloud.header
     fields = ros_point_cloud.fields
