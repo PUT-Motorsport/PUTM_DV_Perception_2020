@@ -150,7 +150,7 @@ roslaunch sick_scan sick_mrs_1xxx.launch
 ```bash
 rviz rviz
 ```
-5. Select laser as fixed frame and add a new PointCloud decoder subscribed at topic cloud.
+5. Select cloud as fixed frame and add a new PointCloud decoder subscribed at topic cloud.
 
 
 ### Sensor data
