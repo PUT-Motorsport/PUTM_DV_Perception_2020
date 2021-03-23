@@ -142,7 +142,9 @@ source ~/ros_catkin_ws/install/setup.bash
 #### Usage
 1. Use the [SICK SOPAS ET Software](https://www.sick.com/de/de/sopas-engineering-tool-2020/p/p367244) (working only on Windows 7,8,10) to determine or set the IP address of the laser scanner.
 2. Change IP address is in the launch-file associated with your scanner type.
-3. Launch the node e.g.
+ - change host IP address to 192.168.0.2, netmask to 255.255.255.0
+ - set lidar IP address to 192.168.0.10
+4. Launch the node e.g.
 ```bash
 roslaunch sick_scan sick_mrs_1xxx.launch
 ```
