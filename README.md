@@ -153,7 +153,50 @@ rviz rviz
 5. Select laser as fixed frame and add a new PointCloud decoder subscribed at topic cloud.
 
 
-### Sensor data TODO
+### Sensor data
 #### Topics
-
+```bash
+/cloud
+/diagnostics
+/rosout
+/scan
+/sick_mrs_1xxx/parameter_descriptions
+/sick_mrs_1xxx/parameter_updates
+```
 #### Messages
+`/cloud` topic example message
+```
+header: 
+  seq: 13326
+  stamp: 
+    secs: 1616173398
+    nsecs: 293624401
+  frame_id: "cloud"
+height: 12
+width: 1101
+fields: 
+  - 
+    name: "x"
+    offset: 0
+    datatype: 7
+    count: 1
+  - 
+    name: "y"
+    offset: 4
+    datatype: 7
+    count: 1
+  - 
+    name: "z"
+    offset: 8
+    datatype: 7
+    count: 1
+  - 
+    name: "intensity"
+    offset: 12
+    datatype: 7
+    count: 1
+is_bigendian: False
+point_step: 16
+row_step: 17616
+data: [182, 189, 175, 190, 122, 9, 161, 190, 11, 132, 166, 188, 0, 0, 47, 67, 184, 201, 175, 190, 41, 127, 162, 190, 255, 58, 167, 188, 0, 0, 38, 67, 3, 180, 174, 190, 208, 233, 162, 190, 133, 223, 166, 188, 0, 0, 214, 66, 212, 67, 170, 190, 85, 43, 160, 190, 193, 76, 163, 188, 0, 0, 40, 66, 174, 252, 249, 191, 146, 58, 237, 191, 73, 192, 240, 189, 0, 0, 87, 67, 229, 53, 248, 191, 30, 156, 237, 191, 84, 9, 240, 189, 0, 0, 95, 67, 100, 64, 246, 191, 98, 205, 237, 191, 163, 36, 239, 189, 0, 0, 101, 67, 83, 5, 244, 191, 231, 182, 237, 191, 87, 251, 237, 189, 0, 0, 105, 67, 3, 227, 241, 191, 141, 179, 237, 191, 234, 232, 236, 189, 0, 0, 106, 67, ..., 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+```
