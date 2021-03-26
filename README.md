@@ -144,7 +144,7 @@ source ~/ros_catkin_ws/install/setup.bash
 2. Change IP address is in the launch-file associated with your scanner type.
  - change host IP address to 192.168.0.2, netmask to 255.255.255.0
  - set lidar IP address to 192.168.0.10
-4. Launch the node e.g.
+3. Launch the node e.g.
 ```bash
 roslaunch sick_scan sick_mrs_1xxx.launch
 ```
@@ -204,3 +204,26 @@ data: [182, 189, 175, 190, 122, 9, 161, 190, 11, 132, 166, 188, 0, 0, 47, 67, 18
 ```
 ### Example rosbag
 [Rosbag #1 19-03-2021](https://drive.google.com/file/d/1LTvPsvDWeTc_hB_4TuQSEiBoi3wYdHUI/view?usp=sharing)
+
+### Launch file
+```
+<?xml version="1.0"?>
+<launch>
+    <arg name="hostname" default="192.168.0.10"/>
+    <arg name="cloud_topic" default="cloud"/>
+    <arg name="frame_id" default="cloud"/>
+    <node name="sick_mrs_1xxx" pkg="sick_scan" type="sick_generic_caller" respawn="false" output="screen">
+        <param name="scanner_type" type="string" value="sick_mrs_1xxx"/>
+        <param name="min_ang" type="double" value="-1.047197551"/>
+        <param name="max_ang" type="double" value="+1.047197551"/>
+        <param name="intensity_resolution_16bit" type="bool" value="true"/>
+        <param name="hostname" type="string" value="$(arg hostname)"/>
+        <param name="port" type="string" value="2112"/>
+        <param name="timelimit" type="int" value="5"/>
+        <param name="cloud_topic" type="string" value="$(arg cloud_topic)"/>
+        <param name="frame_id" type="str" value="$(arg frame_id)"/>
+        <param name="sw_pll_only_publish" type="bool" value="true"/>
+
+    </node>
+</launch>
+```
