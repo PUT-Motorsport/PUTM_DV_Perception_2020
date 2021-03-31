@@ -224,7 +224,8 @@ data: [182, 189, 175, 190, 122, 9, 161, 190, 11, 132, 166, 188, 0, 0, 47, 67, 18
         <param name="cloud_topic" type="string" value="$(arg cloud_topic)"/>
         <param name="frame_id" type="str" value="$(arg frame_id)"/>
         <param name="sw_pll_only_publish" type="bool" value="true"/>
-
+        <param name="imu_enable" type="bool" value="True" />
+        <param name="imu_enable_additional_info" type="bool" value="True" />  
     </node>
 </launch>
 ```
