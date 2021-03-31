@@ -6,7 +6,7 @@ from math import sqrt
 
 
 rospy.init_node('test_points')
-rospy.Rate(100)
+rospy.Rate(50)
 pub = rospy.Publisher("pc2", PointCloud2, queue_size=1)
 
 cone_width = 0.228
@@ -23,7 +23,7 @@ def callback(ros_point_cloud):
     new_data = []
     result = []
     #cluster = MeanShift(bandwidth=6)
-    cluster = Birch(n_clusters=4)
+    cluster = Birch(threshold=0.3)
 
     for x in int_data:
         if x[2] < -0.5 or euclidean_distance(x[0], x[1], x[2]) > 4:
@@ -34,7 +34,6 @@ def callback(ros_point_cloud):
 
     #centers = cluster.cluster_centers_
     centers = cluster.subcluster_centers_
-    print(centers)
     '''for center in centers:
         dist = euclidean_distance(center[0], center[1], center[2])
         border_width = cone_width / dist
