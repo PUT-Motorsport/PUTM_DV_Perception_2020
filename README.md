@@ -78,6 +78,11 @@ linear_acceleration_covariance: [0.0015387262937311438, 0.0, 0.0, 0.0, 0.0015387
 ### Sensor information
 [Grove GPS sensor](https://www.seeedstudio.com/Grove-GPS-Module.html) with comunication via UART and USB UART converter [OKY3412](https://www.okystar.com/product-item/pl2303-pl2303hx-usb-to-rs232-oky3412/).
 
+**NOTE** GPS sensor needs time to first start:
+- cold start: 13s
+- warm start: 1-2s
+- hot start: <1s
+
 ### ROS package
 GPS message package: [nmea_navsat_driver](http://wiki.ros.org/nmea_navsat_driver).
 
@@ -89,7 +94,7 @@ sudo apt install ros-noetic-nmea-navsat-driver
 
 #### Usage
 ```bash
-roslaunch nmea_navsat_driver nmea_serial_driver.launch port:=/dev/ttyUSB0 baud:=9600
+roslaunch nmea_navsat_driver nmea_serial_driver.launch port:=/dev/ttyUSB0 baud:=9600 useRMC:=True
 ```
 
 ### Sensor data
