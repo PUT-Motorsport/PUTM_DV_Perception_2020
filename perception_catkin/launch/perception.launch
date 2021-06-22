@@ -3,7 +3,9 @@
     <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/slam/launch/slam.launch" />
     <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/sick_scan/launch/sick_mrs_1xxx.launch" />
     <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/nmea_navsat_driver/launch/nmea_serial_driver.launch">
-        <arg name="" value="" />
+        <arg name="port" value="/dev/ttyUSB0"/>
+        <arg name="baud" value="9600"/>
+        <arg name="useRMC" value="True"/>
     </include>
     <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/hdl_mod/launch/hdl_graph_slam_imu.launch" />
 </launch>
