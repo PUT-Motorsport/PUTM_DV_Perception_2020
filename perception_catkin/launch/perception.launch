@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/slam/launch/slam.launch" />
+    <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/sick_scan/launch/sick_mrs_1xxx.launch" />
+    <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/nmea_navsat_driver/launch/nmea_serial_driver.launch">
+        <arg name="" value="" />
+    </include>
+    <include file="/home/kamil/dv_github/ros/PUTM_DV_Perception_2020/perception_catkin/src/hdl_mod/launch/hdl_graph_slam_imu.launch" />
+</launch>
