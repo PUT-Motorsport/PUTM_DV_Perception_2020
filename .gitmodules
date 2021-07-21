@@ -1,3 +1,24 @@
 [submodule "sick_scan"]
 	path = sick_scan
 	url = https://github.com/SICKAG/sick_scan
+[submodule "perception_catkin/src/sick_scan"]
+	path = perception_catkin/src/sick_scan
+	url = https://github.com/SICKAG/sick_scan
+[submodule "perception_catkin/src/hdl_graph_slam"]
+	path = perception_catkin/src/hdl_graph_slam
+	url = https://github.com/koide3/hdl_graph_slam
+[submodule "perception_catkin/src/ndt_omp"]
+	path = perception_catkin/src/ndt_omp
+	url = https://github.com/koide3/ndt_omp.git
+[submodule "perception_catkin/src/fast_gicp"]
+	path = perception_catkin/src/fast_gicp
+	url = https://github.com/SMRT-AIST/fast_gicp.git
+[submodule "perception_catkin/src/hdl_mod"]
+	path = perception_catkin/src/hdl_mod
+	url = https://github.com/dmn-sjk/hdl_mod
+[submodule "perception_catkin/src/slam"]
+	path = perception_catkin/src/slam
+	url = https://github.com/dmn-sjk/slam
+[submodule "perception_catkin/src/nmea_navsat_driver"]
+	path = perception_catkin/src/nmea_navsat_driver
+	url = https://github.com/ros-drivers/nmea_navsat_driver

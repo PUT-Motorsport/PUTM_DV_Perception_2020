@@ -7,5 +7,5 @@
         <arg name="baud" value="9600"/>
         <arg name="useRMC" value="True"/>
     </include>
-    <include file="(find hdl_mod)/launch/hdl_graph_slam_imu.launch" />
+    <include file="$(find hdl_graph_slam)/launch/hdl_graph_slam_imu.launch" />
 </launch>
